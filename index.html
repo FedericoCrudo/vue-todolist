@@ -79,7 +79,7 @@
                         <div class="col-xs-2"><i @click="removeDelete(index)"class="far fa-trash-alt"> </i> <i @click="restore(index)"class="fas fa-trash-restore"></i> </div>
                         
                     </div>              
-                     <button  class="buttonDelete ">{{display()}}Elimina Tutti</button>
+                     <button @click="removeDelete" class="buttonDelete">{{display()}}Elimina Tutti</button>
                 </div>
             </div>
         </div>
