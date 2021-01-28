@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+}
+.windowsNotification{
+    background-color: white;
+    position: fixed;
+    right: 0;
+    top: 20px;
+    padding: 30px;
+    color: green;
+    border: 2px solid black;
+    animation: notification 20s linear; 
+    opacity: 0;
+}
+.contenuto{
+    display: none;
+}
+.animation{
+    display: inline-block;
+     animation: body 2s linear;
+}
+.loader{
+    width: 100%;
+    height: 100%;
+   background-color: white;
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.loader.hiddenload{
+    animation: hiddenloader 5s;
+    animation-fill-mode: forwards;
+}
+header .logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+header .logo img{
+    width: 15%;
+}
+.row{
+    width: 95%;
+    margin: auto;
+}
+.row_style{
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.row_style i{
+    cursor: pointer;
+    font-size: 18px;
+}
+.container{
+    width: 90%;
+    background-color: white;
+    -webkit-box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+    margin: 50px auto;
+}
+
+.header h1{
+    letter-spacing: 5px;
+}
+.tools{
+    height: 35px;
+    margin-bottom: 20px;
+}
+.tools input{
+    outline-style: none;
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom:2px solid grey ;
+    font-size: 18px;
+
+}
+.tools input:focus{
+    border-bottom: 2px solid rgba(37, 172, 37, 0.726);
+    transition: 0.8s;
+     margin-top:2px ;
+}
+
+.tools button{
+    font-size: 15px;
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    padding: 0 10px;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.element .buttonDelete{
+    background-color: red;
+    border-radius: 20px;
+    color: white;
+    padding: 5px 10px;
+    outline-style: none;
+    border: none;
+    display: none;
+    font-weight: bold;
+}
+
+
+@keyframes body{
+    0%{ 
+        opacity: 0;
+        position: relative;
+        right: 100%;
+    
+      
+    }
+    25%{
+        opacity: 0.25;
+        position: relative;
+        right: 75%;
+    }
+    50%{
+        opacity: 0.50;
+        position: relative;
+        right: 50%;
+    }
+    75%{
+        opacity: 0.70;
+    }
+    100%{
+        position: relative;
+        right: 0;
+    }
+}
+@keyframes hiddenloader{
+    100%{
+        visibility: hidden;
+        
+    }
+}
+@keyframes notification{
+    0%{ 
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+        
+    }
+    50%{
+        opacity: 0.50;
+      
+    }
+    75%{
+        opacity: 0.70;
+    }
+    
+}

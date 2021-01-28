@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/framework.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="windowsNotification">
+        <span>Elemento Eliminato Con Successo</span>
+    </div>
+    <div class="loader hiddenload">
+        <img class="width_25" src="https://www.boolean.careers/images/misc/logo.png" alt="logo">
+        <img style="width: 500px;" src="https://www.ilvelario.it/ita/images/loading.gif" alt="logo">
+    </div>
+    <div class="contenuto">
+        <header>
+            <div class="logo m_top_10">
+                <img src="https://www.boolean.careers/images/misc/logo.png" alt="logo">
+            </div>
+        </header>
+        <div class="prova">
+            <div class="container pd_T-b_30 ">
+                <div class="header text-center m_top_bott_20">
+                    <h1 class="text_tras_up font_size_35 m_bottom_10 bold ms_green">DB-Vue <i class="fas fa-database ms_red"></i></h1>
+                    <span>Si prega di non ricaricare la pagina,altrimenti le modifiche verrano perse</span>
+                </div>
+                <div class="tools m_left15">
+                    <input type="text"  v-model="message"placeholder="cerca...">
+                    <button @click="find">Cerca</button>
+                </div>
+            
+                <div class="element text-center">
+                    <div class="row font_size_18 m_bottom_10">
+                        <div class="col-xs-1 bold">N.</div>
+                        <div class="col-xs-2 bold">Nome</div>
+                        <div class="col-xs-3 bold">Email</div>
+                        <div class="col-xs-2 bold">Password</div>
+                        <div class="col-xs-2 bold">Stato</div>
+                        <div class="col-xs-2 bold">Operazioni </div>
+                                
+                    </div>
+                    <div v-for="(item,index) in items"   class="row pd_t_b_10 m_bottom_10 row_style bg_color_section">
+                        <div class="col-xs-1 ">{{index}}</div>
+                        <div class="col-xs-2">{{item.user}}</div>
+                        <div class="col-xs-3">{{item.email}}</div>
+                        <div class="col-xs-2 ">{{item.password}} {{message}}</div>
+                        <div class="col-xs-2 "><i class="fas fa-circle" :class="(item.stato=='on') ? 'green' : 'red'" ></i></div>
+                        <div class="col-xs-2"><i @click="remove(index)"class="far fa-trash-alt"></i> </div>
+                    </div>              
+   
+                </div>
+            </div>
+            <div class="container pd_T-b_30 ">
+            
+                <div class="element text-center">
+                    <h4 class="bold ms_red pd_B_10">Elementi eliminati</h4>
+                    <div class="row font_size_18 m_bottom_10">
+                        <div class="col-xs-1 bold">N.</div>
+                        <div class="col-xs-2 bold">Nome</div>
+                        <div class="col-xs-3 bold">Email</div>
+                        <div class="col-xs-2 bold">Password</div>
+                        <div class="col-xs-2 bold">Stato</div>
+                        <div class="col-xs-2 bold">Operazioni </div>
+                                
+                    </div>
+                    <div v-for="(item,index) in itemsDelete"   class="row pd_t_b_10 m_bottom_10 row_style bg_color_section">
+                        <div class="col-xs-1 ">{{index}}</div>
+                        <div class="col-xs-2">{{item.user}}</div>
+                        <div class="col-xs-3">{{item.email}}</div>
+                        <div class="col-xs-2 ">{{item.password}} {{message}}</div>
+                        <div class="col-xs-2 "><i class="fas fa-circle" :class="(item.stato=='on') ? 'green' : 'red'" ></i></div>
+                        <div class="col-xs-2"><i @click="removeDelete(index)"class="far fa-trash-alt"> </i> <i @click="restore(index)"class="fas fa-trash-restore"></i> </div>
+                        
+                    </div>              
+                     <button  class="buttonDelete ">{{display()}}Elimina Tutti</button>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+    
+    <script src="js/vue.js"></script>
+</body>
+</html>
