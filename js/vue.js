@@ -12,6 +12,11 @@ var print = new Vue({
     el: '.prova',
     data: {
     message:'',
+    id:"",
+    nome:"",
+    email:"",
+    password:"",
+    stato:"",
     itemsFilter:[],
    itemsDelete:[],
     items:[
@@ -90,29 +95,55 @@ var print = new Vue({
         },
         notifydelete(){
             $("#notify").text("");
-            $(".windowsNotification").removeClass("notification-animation");
+            $(".windowsNotification").removeClass("notification-animation bg_color_red");
             $("#notify").text("Elemento eliminato con successo");
             $(".windowsNotification").addClass("notification-animation");
-            setTimeout(function(){ $(".windowsNotification").removeClass("notification-animation"); }, 1000);
+            setTimeout(function(){ $(".windowsNotification").removeClass("notification-animation"); }, 2000);
         },
-        notifyrestore(){
+        notifyempity(){
             $("#notify").text("");
             $(".windowsNotification").removeClass("notification-animation");
+            $("#notify").text("Si prega di compilare i campi");
+            $(".windowsNotification").addClass("notification-animation bg_color_red");
+            setTimeout(function(){ $(".windowsNotification").removeClass("notification-animation"); }, 2000);
+        },
+
+        notifyrestore(){
+            $("#notify").text("");
+            $(".windowsNotification").removeClass("notification-animation bg_color_red");
             $("#notify").text("Elemento Ripristinato con Successo");
             $(".windowsNotification").addClass("notification-animation");
-            setTimeout(function(){ $(".windowsNotification").removeClass("notification-animation"); }, 1000);
+            setTimeout(function(){ $(".windowsNotification").removeClass("notification-animation"); }, 2000);
         },
-         filtered() {
-           
+         filtered() { 
+           this.itemsFilter="asda";
             if(this.message.length>=1){
-                this.itemsFilter=this.items.filter((element)=>{
+                this.itemsFilter=this.items.filter((element)=>{  
                     return element.user.includes(this.message);
-                    });  
+                    }); 
+                    
                     console.log(this.itemsFilter);     
             }
-            (this.message.length==0)?this.itemsFilter=[]:"";
-           
+            else{
+                
+               this.notifyempity()
+            }
+
         },
+        addItems(){
+            if((this.id=="")||(this.nome=="")||(this.email=="")||(this.password=="")||(this.stato=="")){
+                this.notifyempity();
+            }
+            else{
+                this.items.push({
+                "index":this.id,
+                "user":this.nome,
+                "email":this.email,
+                "password":this.password,
+                "stato":this.stato})
+            }
+           
+        }
      
 
     }

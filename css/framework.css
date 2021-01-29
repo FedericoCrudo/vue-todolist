@@ -66,6 +66,9 @@
     .text_color-grey{
       color: #77797D;
     } 
+    .bg_color_red{
+      background-color:rgba(223, 24, 24, 0.884);
+    }
      .bg_color_section{
       background-color: #f3f5f9;
     }
