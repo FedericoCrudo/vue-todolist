@@ -4,27 +4,62 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Courier New', Courier, monospace;
-    background-color: white;
+    font-family: 'Courier New', Courier, monospace; 
+}
+button{
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
 }
 .windowsNotification{
     background-color: white;
     position: fixed;
     right: 0;
     top: 20px;
-    padding: 30px;
-    color: green;
-    border: 2px solid black;
-    animation: notification 20s linear; 
-    opacity: 0;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius:20px ;
+    background-color: rgba(36, 161, 36, 0.781);
+    z-index:100;
+    display: none;
+}
+.notification-animation{
+    animation: notification 1s linear ;
+    display: inline-block;
+}
+.dark-mode{
+    width: 70px;
+    height: 30px;
+    background-color: grey;
+    position: absolute;
+    border-radius:20px ;
+    top: 40px;
+    right: 40px;
+}
+.dark-mode button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.dark-botton{
+    margin-left:40px ;
+    background-color: black;
 }
 .contenuto{
+    width: 100%;
     display: none;
+    margin: auto;
 }
 .animation{
     display: inline-block;
      animation: body 2s linear;
 }
+.animationRowDelete{
+    animation: rowDelete 2s linear;
+}
+
 .loader{
     width: 100%;
     height: 100%;
@@ -45,13 +80,18 @@ body{
     animation-fill-mode: forwards;
 }
 header .logo{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: 100%; 
 }
 header .logo img{
     width: 15%;
 }
+.container .header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
 .row{
     width: 95%;
     margin: auto;
@@ -99,9 +139,6 @@ header .logo img{
 
 .tools button{
     font-size: 15px;
-    outline-style: none;
-    box-shadow: none;
-    border-color: transparent;
     padding: 0 10px;
 }
 .red{
@@ -156,18 +193,43 @@ header .logo img{
 }
 @keyframes notification{
     0%{ 
-        opacity: 0;
+        right: -200px;
     }
     25%{
-        opacity: 0.25;
+       right: -100px; 
         
     }
     50%{
-        opacity: 0.50;
-      
-    }
-    75%{
-        opacity: 0.70;
+        right: 0;
     }
     
+    
+    
 }
+@keyframes rowDelete{
+    0%{ 
+        opacity: 1;
+        position: relative;
+        left: 5%;
+    }
+    25%{
+        opacity: 0.75;
+        position: relative;
+        left: 10%;
+    }
+    50%{
+        opacity: 0.50;
+        position: relative;
+        left: 20%;
+    }
+    75%{
+        left: 50%;
+        opacity: 0.20;
+    }
+    100%{
+        left: 100%;
+        position: relative;
+
+    }
+}
+
