@@ -2,10 +2,11 @@
 // // Bonus: Aggiungere un’immagine presa anch’essa da un data assieme al valore alt dell'attributo. 
 // Poi aggiungete all'immagine una classe sempre presa dal data.
 $(document).ready(function(){
-    setTimeout(function(){ $(".contenuto").addClass("animation"); }, 5000);
+    setTimeout(function(){ $(".contenuto").addClass("animation"); }, 2000);
     $(".link").click(function () {
         $(this).toggleClass("dark-botton");
-        $("body").toggleClass("bg_color_blue");
+        $("body").toggleClass("bg_color_red");
+        $(".container").toggleClass("bg_color_container");
     })
   });
 var print = new Vue({

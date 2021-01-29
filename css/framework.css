@@ -66,8 +66,13 @@
     .text_color-grey{
       color: #77797D;
     } 
-    .bg_color_red{
-      background-color:rgba(223, 24, 24, 0.884);
+    .bg_color_container{
+     background-color: #f3eaea;
+     
+    }
+
+
+
     }
      .bg_color_section{
       background-color: #f3f5f9;
@@ -75,6 +80,13 @@
     .bg_color_blue{
       background-color:#579aff ;
     }
+    
+    .bg_color_black{
+      background-color:rgba(46, 40, 40, 0.637) ;
+    }  
+      .bg_color_red{
+      background-color: rgb(255 0 0 / 64%);
+}
   .width_100{
       max-width: 100%;
       }
