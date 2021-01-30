@@ -11,6 +11,7 @@ button{
     box-shadow: none;
     border-color: transparent;
 }
+
 .windowsNotification{
     background-color: white;
     position: fixed;
@@ -21,7 +22,7 @@ button{
     font-size: 18px;
     font-weight: bold;
     border-radius:20px ;
-    background-color: rgba(36, 161, 36, 0.781);
+    background-color: rgb(49, 172, 49);
     z-index:100;
     display: none;
 }
@@ -47,6 +48,53 @@ button{
     margin-left:40px ;
     background-color: black;
 }
+.changedata{
+    position: fixed;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 400px;
+    z-index: 100;
+    background: #1FA2FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    -webkit-box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+}
+.changedata .intestazione{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.changedata .intestazione::after{
+    display: block;
+    content: "";
+    width: 80%;
+    height: 3px;
+    margin-top: 5px;
+    background-color: #ce3333;
+}
+
+.changedata .changedata-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-attachment: red;
+    margin-top: 20px;
+}
+.changedata .changedata-body input{
+    width: 50%;
+    margin-bottom:20px;
+    font-size: 20px;
+}
+
+
+
 .contenuto{
     width: 100%;
     display: none;
@@ -59,7 +107,13 @@ button{
 .animationRowDelete{
     animation: rowDelete 2s linear;
 }
-
+.btn:focus{
+    outline-style: none; 
+    border: none;
+}
+.btn-success{
+    margin-top:10px ;
+}
 .loader{
     width: 100%;
     height: 100%;
@@ -89,6 +143,7 @@ button{
 }
 header .logo{
     width: 100%; 
+    margin-top:20px ;
 }
 header .logo img{
     width: 15%;
@@ -130,21 +185,26 @@ header .logo img{
     
     margin-bottom: 20px;
 }
-.tools input{
+ input{
     outline-style: none;
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
     border-bottom:2px solid grey ;
-    font-size: 18px;
+    font-size: 16px;
 
 }
-.tools input:focus{
+ input:focus{
     border-bottom: 2px solid rgba(37, 172, 37, 0.726);
     transition: 0.8s;
      margin-top:2px ;
 }
-
+.input{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
 .tools button{
     
     padding: 0 10px;

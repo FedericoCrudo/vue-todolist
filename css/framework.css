@@ -37,6 +37,9 @@
     .text-underline:hover{
       text-decoration: underline;
     }
+    .letter_space_10{
+      letter-spacing: 5px;
+    }
     /* text-color/ bg color / bold */
   .ms_green {
       color: #1abc27;
