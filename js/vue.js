@@ -186,14 +186,18 @@ var print = new Vue({
             setTimeout(function(){ $(".windowsNotification").removeClass("notification-animation"); }, 2000);
         },
          filtered() { 
+            
              this.message=this.message.charAt(0).toUpperCase()+ this.message.slice(1).toLowerCase()
             if(this.message.length>=1){
                 this.itemsFilter=this.items.filter((element)=>{  
                     return element.user.includes(this.message);
                     });   
-                    console.log(this.itemsFilter);      
+                    console.log(this.itemsFilter);    
+                  
                 }
             else{  
+                
+                console.log(this.itemsFilter);
                this.notifyempity()
             }
         },
@@ -227,9 +231,7 @@ var print = new Vue({
             }
           
         },
-        changeItems(){
-            alert("Ciao")
-        }
+        
      
      
 

@@ -21,19 +21,26 @@
     <div class="dark-mode">
         <button  class="link"></button>
     </div>
-    <div class="changedata">
-        <div class="intestazione  m_top_10">
-         <span class=" font_size_25 letter_space_10 bold m_right_10">Settings <i class="font_size_25 ms_red fas fa-tools"></i> </span>
-         
-        </div>
-        <div class="changedata-body">
-            <input type="text" v-model="id" placeholder="ID">
-            <input type="text" v-model="nome" placeholder="Nome">
-            <input type="email"  v-model="email" placeholder="Email">
-            <input type="text" v-model="password" placeholder="Password">
-            <input type="text" v-model="stato" placeholder="Stato(on/off)">
-        </div>
+    <div class="alert-data">
+        <div class="changedata">
+                <div class="intestazione  m_top_10">
+                <span class=" font_size_25 letter_space_10 bold m_right_10">Settings <i class="font_size_25 ms_red fas fa-tools"></i> </span>
+                
+                </div>
+                <div class="changedata-body">
+                    <input type="text" v-model="id" placeholder="ID">
+                    <input type="text" v-model="nome" placeholder="Nome">
+                    <input type="email"  v-model="email" placeholder="Email">
+                    <input type="text" v-model="password" placeholder="Password">
+                    <input type="text" v-model="stato" placeholder="Stato(on/off)">
+                </div>
+                <div class="section-button">
+                    <button    class="buttonAdd font_size_18 m_right_15">Modifica</button>
+                    <button  class="buttonAdd bg_color_red  font_size_18">Annulla</button>
+                </div>
+            </div>
     </div>
+    
 
     <!-- sezione loader -->
     <div class="loader hiddenload">
@@ -95,6 +102,7 @@
                         </div>   
                     </div>
                     <div v-else>
+                       
                         <div v-for="(item,index) in itemsFilter"   class="row row-element  font_size_18 pd_t_b_10 m_bottom_10 row_style bg_color_section">
                             <div class="col-xs-1 ">{{item.index}}</div>
                             <div class="col-xs-2">{{item.user}}</div>
